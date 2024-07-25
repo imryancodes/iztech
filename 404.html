@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            animation: stars 120s linear infinite;
+        }
+        @keyframes stars {
+            0% {
+                background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            }
+            100% {
+                background-position: -550px -550px, -310px -290px, -120px -280px, -80px -50px;
+            }
+        }
+        .content {
+            z-index: 1;
+            position: relative;
+        }
+        h1 {
+            color: #66fcf1;
+            font-size: 8em;
+            margin: 0;
+            text-shadow: 0 0 10px #66fcf1;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #66fcf1;
+            color: #0b0c10;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #45a29e;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>404</h1>
+        <p>Oops! This page seems to have drifted off into space.</p>
+        <a href="iztech.xyz" class="btn">Return to Home</a>
+    </div>
+</body>
+</html>

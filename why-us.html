@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iztech - Why Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            line-height: 1.6;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+            animation: rotate 300s linear infinite;
+        }
+        .stars::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+            animation: rotate 240s linear infinite reverse;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        header {
+            background-color: rgba(11, 12, 16, 0.8);
+            padding: 1rem;
+            text-align: center;
+        }
+        h1 {
+            color: #66fcf1;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 10px #66fcf1;
+            cursor: pointer;
+        }
+        nav {
+            background-color: rgba(11, 12, 16, 0.6);
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #66fcf1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #45a29e;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: rgba(11, 12, 16, 0.6);
+            border-radius: 5px;
+        }
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .reason {
+            background-color: rgba(102, 252, 241, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .reason:hover {
+            background-color: rgba(102, 252, 241, 0.2);
+            transform: scale(1.05);
+        }
+        .reason h3 {
+            color: #66fcf1;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #66fcf1;
+            color: #0b0c10;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background-color: #45a29e;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <header>
+        <a href="/" style="text-decoration: none;">
+            <h1>Iztech</h1>
+        </a>
+        <h3>We make tech easy</h3>
+    </header>
+    <main>
+        <h2>Why Choose Iztech?</h2>
+        <p>At Iztech, we're committed to providing top-notch tech support that sets us apart from the competition. Here's why you should choose us:</p>
+        <div class="reasons">
+            <div class="reason">
+                <h3>Expert Team</h3>
+                <p>Our tech experts are highly trained and experienced in solving a wide range of tech issues.</p>
+            </div>
+            <div class="reason">
+                <h3>Fast Support</h3>
+                <p>We're available around the clock to help you with any tech problems, no matter when they occur.</p>
+            </div>
+            <div class="reason">
+                <h3>Cutting-Edge Solutions</h3>
+                <p>We stay up-to-date with the latest technologies to provide you with the most effective solutions.</p>
+            </div>
+            <div class="reason">
+                <h3>No Remote Software</h3>
+                <p>We have strived to always keep our customers in control of their devices, unlike tech support scammers.</p>
+            </div>
+            <div class="reason">
+                <h3>Free support</h3>
+                <p>Since IzTech just launched, our top priority is our customers. That's why we're offering free support.</p>
+            </div>
+            <div class="reason">
+                <h3>Customer Satisfaction</h3>
+                <p>We're not happy until you're happy. Your satisfaction is very important to us.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/" class="btn">Get Support Now</a>
+        </div>
+    </main>
+</body>
+</html>

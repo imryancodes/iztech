@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iztech - Coming Soon</title>
+    <title>Iztech</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         body {
@@ -12,173 +12,138 @@
             background-color: #0b0c10;
             color: #c5c6c7;
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
         }
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-                radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-            animation: stars 120s linear infinite;
-        }
-        @keyframes stars {
-            0% {
-                background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-            }
-            100% {
-                background-position: -550px -550px, -310px -290px, -120px -280px, -80px -50px;
-            }
-        }
-        header {
-            color: #66fcf1;
-            padding: 60px;
-            z-index: 1;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 4em;
-            font-weight: 700;
-        }
-        header p {
-            margin: 10px 0;
-            font-size: 1.5em;
-            font-weight: 400;
-        }
-        .subtext {
-            margin-top: auto;
-            padding: 20px;
-            font-size: 1em;
-            color: #45a29e;
-            z-index: 1;
-            position: relative;
-        }
-        .subtext a {
-            color: #66fcf1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .subtext a:hover {
-            color: #45a29e;
-        }
-        .night {
+        .stars {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            z-index: -1;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+            animation: rotate 300s linear infinite;
         }
-        .shooting-star {
+        .stars::after {
+            content: "";
             position: absolute;
-            height: 2px;
-            background: linear-gradient(-45deg, #5f91ff, white);
-            border-radius: 999px;
-            filter: drop-shadow(0 0 6px #699bff);
-            animation: tail 3000ms ease-in-out infinite, 
-                       shooting 3000ms ease-in-out infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+            animation: rotate 240s linear infinite reverse;
         }
-        .shooting-star::before {
-            content: '';
-            position: absolute;
-            top: calc(50% - 1px);
-            right: 0;
-            height: 2px;
-            background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
-            transform: translateX(50%) rotateZ(45deg);
-            border-radius: 100%;
-            animation: shining 3000ms ease-in-out infinite;
-        }
-        @keyframes tail {
-            0% { width: 0; }
-            30% { width: 100px; }
-            100% { width: 0; }
-        }
-        @keyframes shining {
-            0% { width: 0; }
-            50% { width: 30px; }
-            100% { width: 0; }
-        }
-        @keyframes shooting {
+        @keyframes rotate {
             0% {
-                transform: translateX(0);
+                transform: rotate(0deg);
             }
             100% {
-                transform: translateX(300px);
+                transform: rotate(360deg);
             }
+        }
+        header {
+            background-color: rgba(11, 12, 16, 0.8);
+            padding: 1rem;
+            text-align: center;
+        }
+        h1 {
+            color: #66fcf1;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 10px #66fcf1;
+        }
+        nav {
+            background-color: rgba(11, 12, 16, 0.6);
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #66fcf1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #45a29e;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: rgba(11, 12, 16, 0.6);
+            border-radius: 5px;
+        }
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .support-option {
+            background-color: rgba(102, 252, 241, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .support-option:hover {
+            background-color: rgba(102, 252, 241, 0.2);
+            transform: scale(1.05);
+        }
+        .support-option h3 {
+            color: #66fcf1;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #66fcf1;
+            color: #0b0c10;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background-color: #45a29e;
         }
     </style>
 </head>
 <body>
+    <div class="stars"></div>
     <header>
-        <h1>IzTech</h1>
-        <p>Coming Soon</p>
+        <h1>Iztech</h1>
+        <h3>We make tech easy</h3>
     </header>
-    <div class="subtext">
-        <p>A <a href="https://ryancodes.xyz" target="_blank">Ryancodes</a> project</p>
-    </div>
-    <div class="night"></div>
-
-    <script>
-    function createShootingStar() {
-        const night = document.querySelector('.night');
-        const star = document.createElement('div');
-        star.classList.add('shooting-star');
-        
-        // Determine start position (top or left side)
-        const startFromTop = Math.random() < 0.5;
-        let startX, startY;
-        
-        if (startFromTop) {
-            startX = Math.random() * window.innerWidth;
-            startY = -10; // Start slightly above the viewport
-        } else {
-            startX = -10; // Start slightly left of the viewport
-            startY = Math.random() * window.innerHeight;
-        }
-        
-        // Calculate angle (always moving diagonally)
-        const angle = startFromTop ? 
-            Math.random() * 20 + 15 : // 15 to 35 degrees if starting from top
-            Math.random() * 20 + 40;  // 40 to 60 degrees if starting from left
-        
-        const distance = Math.max(window.innerWidth, window.innerHeight) * 1.5;
-        const endX = startX + distance * Math.cos(angle * Math.PI / 180);
-        const endY = startY + distance * Math.sin(angle * Math.PI / 180);
-        
-        star.style.left = `${startX}px`;
-        star.style.top = `${startY}px`;
-        star.style.transform = `rotate(${angle}deg)`;
-        
-        night.appendChild(star);
-
-        // Animate the star
-        star.animate([
-            { transform: `translate(0, 0) rotate(${angle}deg)` },
-            { transform: `translate(${endX - startX}px, ${endY - startY}px) rotate(${angle}deg)` }
-        ], {
-            duration: 2000 + Math.random() * 1000, // Random duration between 2-3 seconds
-            easing: 'linear'
-        }).onfinish = () => star.remove();
-    }
-
-    setInterval(createShootingStar, 1500);
-</script>
+    <main>
+        <h2>Welcome to Iztech</h2>
+        <p>We're here to help you with all your tech needs. Choose from our support options below:</p>
+        <div class="support-options">
+            <div class="support-option">
+                <h3>Live Chat (BETA)</h3>
+                <p>Get instant help from our tech experts.</p>
+                <a href="live-chat" class="btn">Start Chat</a>
+            </div>
+            <div class="support-option">
+                <h3>Email Support</h3>
+                <p>Send us your questions and we'll respond promptly.</p>
+                <a href="email" class="btn">Email Us</a>
+            </div>
+            <div class="support-option">
+                <h3>Why us</h3>
+                <p>Why choose us over another support firm</p>
+                <a href="why-us" class="btn">Find Out</a>
+        </div>
+    </main>
 </body>
 </html>

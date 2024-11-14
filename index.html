@@ -15,21 +15,6 @@
             background-color: #0b0c10;
             color: #c5c6c7;
             line-height: 1.6;
-            padding-top: 3rem; /* Adjust padding for banner space */
-        }
-        
-        /* Banner styles */
-        .banner {
-            width: 100%;
-            background-color: #66fcf1;
-            color: #0b0c10;
-            text-align: center;
-            padding: 0.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
         }
         
         /* Stars background animation */
@@ -66,26 +51,53 @@
             }
         }
         
-        /* Header and navigation styles */
-        header {
-            padding: 1rem;
+        /* Popup styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1f2833;
+            color: #c5c6c7;
+            padding: 1.5rem;
+            box-shadow: 0 0 15px #0b0c10;
+            border-radius: 10px;
+            width: 300px;
             text-align: center;
+            z-index: 1001;
+            display: none; /* Initially hidden */
         }
-        
-        h1 {
+
+        .popup h2 {
             color: #66fcf1;
-            font-size: 2.5em;
+            margin: 0 0 0.5rem;
+        }
+
+        .popup p {
             margin: 0;
-            text-shadow: 0 0 10px #66fcf1;
+        }
+
+        .popup .close-btn {
+            background-color: #66fcf1;
+            color: #0b0c10;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
         }
         
-        h3 {
+        /* Header and Main Content */
+        header {
+            text-align: center;
+            padding: 2rem;
             color: #66fcf1;
         }
         
-        .ryancodes {
-            color: #66fcf1;
-            margin: 1rem 0;
+        .pronunciation, .ryancodes {
+            font-size: 0.9rem;
+            color: #45a29e;
         }
         
         .ryancodes a {
@@ -138,13 +150,33 @@
             background-color: #45a29e;
         }
     </style>
+    <script>
+        // Function to show the popup
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        // Show the popup when the page loads
+        window.onload = function() {
+            showPopup();
+        };
+    </script>
 </head>
 <body>
-    <!-- 100% Free Banner -->
-    <div class="banner">
-        100% Free
-    </div>
     <div class="stars"></div>
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <h2>Fully Free!</h2>
+        <p>Our tech support service is completely free!</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Content -->
     <header>
         <h1>Iztech</h1>
         <p class="pronunciation">(pronounced "Is tech")</p>
@@ -153,7 +185,7 @@
     </header>
     <main>
         <h2>Welcome to Iztech</h2>
-        <p>I'm (Ryan) am here to help you with all your tech needs. Choose from our support options below:</p>
+        <p>I'm (Ryan) here to help you with all your tech needs. Choose from our support options below:</p>
         <div class="support-options">
             <div class="support-option">
                 <h3>Live Chat (BETA)</h3>
@@ -166,7 +198,7 @@
                 <a href="email" class="btn">Email Us</a>
             </div>
             <div class="support-option">
-                <h3>Why us</h3>
+                <h3>Why Us</h3>
                 <p>Why choose IzTech over another support firm</p>
                 <a href="why-us" class="btn">Find Out</a>
             </div>

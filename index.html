@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +5,6 @@
     <title>Iztech</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-        
-        /* General Styles */
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 0;
@@ -15,111 +12,29 @@
             background-color: #0b0c10;
             color: #c5c6c7;
             line-height: 1.6;
-            position: relative;
         }
-        
-        /* Stars Background */
         .stars {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2; /* Make sure stars are in the background */
+            z-index: -1;
             background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3Cpath d='M520-140L577.5 41.5 769 229 902 382 603 493 731 737 731 337 902 59M370 105L126.5 79.5M579 842M295 764M295-36L570.5 37.5%22%3E%3C/svg%3E");
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
             animation: rotate 300s linear infinite;
         }
-
-        /* Popup Styles */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            padding: 2.5rem;
-            background-color: #1f2833;
-            color: #66fcf1;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            z-index: 1000; /* Popup above the background */
+        .stars::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+            animation: rotate 240s linear infinite reverse;
         }
-        .popup h2 {
-            margin-top: 0;
-            font-size: 2em;
-        }
-        .popup p {
-            font-size: 1.2em;
-        }
-        .close-btn {
-            background-color: #66fcf1;
-            color: #0b0c10;
-            border: none;
-            padding: 0.5rem 1.5rem;
-            margin-top: 1.5rem;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        /* Header and Main Content */
-        header {
-            text-align: center;
-            padding: 2rem;
-            color: #66fcf1;
-        }
-        .pronunciation, .ryancodes {
-            font-size: 0.9rem;
-            color: #45a29e;
-        }
-        .ryancodes a {
-            color: #45a29e;
-            text-decoration: none;
-        }
-        main {
-            padding: 1rem;
-            text-align: center;
-        }
-        h2 {
-            color: #66fcf1;
-        }
-
-        /* Support Options */
-        .support-options {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .support-option {
-            background-color: #1f2833;
-            padding: 1rem;
-            border-radius: 5px;
-            width: 300px;
-            box-shadow: 0 0 15px #0b0c10;
-        }
-        .support-option h3 {
-            color: #66fcf1;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            margin-top: 1rem;
-            background-color: #66fcf1;
-            color: #0b0c10;
-            text-decoration: none;
-            border-radius: 3px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #45a29e;
-        }
-
-        /* Stars Animation */
         @keyframes rotate {
             0% {
                 transform: rotate(0deg);
@@ -128,38 +43,103 @@
                 transform: rotate(360deg);
             }
         }
+        header {
+            padding: 1rem;
+            text-align: center;
+        }
+        h1 {
+            color: #66fcf1;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 10px #66fcf1;
+        }
+        h3 {
+            color: #66fcf1;
+        }
+        .ryancodes {
+            color: #66fcf1;
+            margin: 1rem 0;
+        }
+        .ryancodes a {
+            color: #66fcf1;
+            text-decoration: none;
+        }
+        .ryancodes a:hover {
+            color: #45a29e;
+        }
+        nav {
+            background-color: rgba(11, 12, 16, 0.6);
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #66fcf1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #45a29e;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: rgba(11, 12, 16, 0.6);
+            border-radius: 5px;
+        }
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .support-option {
+            background-color: rgba(102, 252, 241, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .support-option:hover {
+            background-color: rgba(102, 252, 241, 0.2);
+            transform: scale(1.05);
+        }
+        .support-option h3 {
+            color: #66fcf1;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #66fcf1;
+            color: #0b0c10;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background-color: #45a29e;
+        }
+        .pronunciation {
+            font-size: 1em;
+            color: #45a29e;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
     </style>
-    <script>
-        // Function to show the popup
-        function showPopup() {
-            document.getElementById("popup").style.display = "block";
-        }
-
-        // Function to close the popup and set the flag in local storage
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-            localStorage.setItem("popupShown", "true");
-        }
-
-        // Check local storage and show the popup only if it hasn’t been shown before
-        window.onload = function() {
-            if (!localStorage.getItem("popupShown")) {
-                showPopup();
-            }
-        };
-    </script>
 </head>
 <body>
     <div class="stars"></div>
-    
-    <!-- Popup -->
-    <div id="popup" class="popup">
-        <h2>Fully Free!</h2>
-        <p>Our tech support service is completely free!</p>
-        <button class="close-btn" onclick="closePopup()">Close</button>
-    </div>
-
-    <!-- Content -->
     <header>
         <h1>Iztech</h1>
         <p class="pronunciation">(pronounced "Is tech")</p>
@@ -168,11 +148,11 @@
     </header>
     <main>
         <h2>Welcome to Iztech</h2>
-        <p>I'm (Ryan) here to help you with all your tech needs. Choose from our support options below:</p>
+        <p>I'm (Ryan) am here to help you with all your tech needs. Choose from our support options below:</p>
         <div class="support-options">
             <div class="support-option">
                 <h3>Live Chat (BETA)</h3>
-                <p>Get help using live chat for more simple questions. Please note, it may take up to a day to receive a response.</p>
+                <p>Get help using live chat for more simple questions. Please note, it may take up to a day to recive a responce.</p>
                 <a href="live-chat" class="btn">Start Chat</a>
             </div>
             <div class="support-option">
@@ -181,7 +161,7 @@
                 <a href="email" class="btn">Email Us</a>
             </div>
             <div class="support-option">
-                <h3>Why Us</h3>
+                <h3>Why us</h3>
                 <p>Why choose IzTech over another support firm</p>
                 <a href="why-us" class="btn">Find Out</a>
             </div>

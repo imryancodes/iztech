@@ -108,10 +108,12 @@
             border-radius: 5px;
             text-align: center;
             transition: all 0.3s ease;
+            /* New styles for button alignment */
+            display: flex;
+            flex-direction: column;
         }
-        .support-option:hover {
-            background-color: rgba(102, 252, 241, 0.2);
-            transform: scale(1.05);
+        .support-option .btn {
+            margin-top: auto;
         }
         .support-option h3 {
             color: #66fcf1;

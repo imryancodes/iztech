@@ -5,4 +5,4 @@ Iztech was a free tech support site that would answer all of tech support questi
 
 #
 
-### © Ryancodes 2026
+### © Ryan Kiapour 2026
